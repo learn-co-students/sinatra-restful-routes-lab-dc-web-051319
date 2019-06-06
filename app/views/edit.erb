@@ -1,0 +1,24 @@
+<!-- Form to edit an existing recipe -->
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <h1>Edit This Recipe</h1>
+    </head>
+
+
+    <body>
+        <form action="/recipes/<%= @recipe.id %>/edit" method='POST'>
+            <input type='hidden' name='_method' value='PATCH'>
+            <label for="name">Name:</label>
+            <input type="text" name="name" value='<%= @recipe.name %>'>
+            <label for="ingredients">Ingredients:</label>
+            <input type="text" name="ingredients" value='<%= @recipe.ingredients %>'>
+            <label for="cook_time">Cook Time (in minutes):</label>
+            <input type="text" name="cook_time" value='<%= @recipe.cook_time %>'>
+            <input type="submit" value="Edit Recipe">  
+        </form>
+    </body>
+
+
+</html>
