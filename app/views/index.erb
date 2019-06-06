@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <h1>Bomb.com Mac and Cheese</h1>
+        <hr />
+    </head>
+
+    <body>
+
+    <ul>
+    <!--- Going through the recipes and stating the attributes --->
+    <% @recipes.each do |recipe|%>
+
+    <h2><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></h2>
+    <h3>Ingredients: <%= recipe.ingredients %></h3>
+    <h3>Cook time <%= recipe.cook_time %></h3>
+    <% end %>
+    </ul>
+
+    <br>
+    <!--- Button to create a new recipe --->
+    <form action="/recipes/new" method="GET">
+        <input style="font-size:50px" type="submit" value="Create a New Recipe">
+    </form>
+
+    </body>
+</html>

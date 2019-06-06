@@ -1,0 +1,28 @@
+<!-- This will show a recipe's details -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detail Page</title>
+</head>
+<body>
+
+    <h2><%= @recipe.name %></h2>
+    <div>Needs: <%= @recipe.ingredients %></div>
+
+    <div>Cook Time: <%= @recipe.cook_time %> minutes</div>
+    <br>
+
+    <form action="/recipes/<%= @recipe.id %>" method="POST">
+        <input type="hidden" name="_method" value="delete">
+        <input style="font-size:45px" type="submit" value="Delete This Recipe">
+    </form>
+
+    <form action="/recipes/<%= @recipe.id %>/edit" method="GET">
+        <input style="font-size:45px" type="submit" value="Edit This Recipe">
+    </form>
+
+    <br>
+
+    <a href="/recipes" style="font-weight: bold">Recipe Index Page</a>
+</body>
+</html>
